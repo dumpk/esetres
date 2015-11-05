@@ -83,6 +83,11 @@ class EsetresAWS
         return $object;
     }
 
+    public static function deleteFile($key, $bucket)
+    {
+        return self::deleteObject($key, $bucket);
+    }
+
     public static function deleteObject($key, $bucket)
     {
         $s3c = self::getS3C();
@@ -97,6 +102,11 @@ class EsetresAWS
         }
     }
 
+    public static function fileExists($key, $bucket)
+    {
+        return self::objectExists($key, $bucket);
+    }
+
     public static function objectExists($key, $bucket)
     {
         $s3c = self::getS3C();
@@ -105,6 +115,11 @@ class EsetresAWS
         } else {
             return false;
         }
+    }
+
+    public static function makeFilePublic($key, $bucket)
+    {
+        return self::setPublicObject($key, $bucket);
     }
 
     public static function setPublicObject($key, $bucket)
