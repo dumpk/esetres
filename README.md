@@ -13,7 +13,7 @@ Laravel AWS S3 Service Integration to upload files.
 Require this package with composer:
 
 ```
-composer require dumpk/elastcoder
+composer require dumpk/esetres
 ```
 
 Add this variables to your .env with your Amazon credentials
