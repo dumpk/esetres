@@ -34,5 +34,7 @@
 
          $this->assertTrue(is_string(file_get_contents($object['@metadata']['effectiveUri'])));
          echo $object['@metadata']['effectiveUri'];
+
+         EsetresAWS::deleteObject($destination_key, getenv('BUCKET'));
      }
  }
