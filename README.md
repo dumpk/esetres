@@ -40,7 +40,7 @@ EsetresAWS::uploadFile($filepath, $key, $bucket);
 
 To delete a file:
 ```php
-EsetresAWS::deleteFile($$key, $bucket);
+EsetresAWS::deleteFile($key, $bucket);
 ```
 
 To make a file accesible to everyone:
