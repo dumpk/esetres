@@ -20,8 +20,8 @@
      {
          $destination_key = getenv('KEY');
 
-         if (EsetresAWS::objectExists($destination_key, getenv('BUCKET'))) {
-             EsetresAWS::deleteObject($destination_key, getenv('BUCKET'));
+         if (EsetresAWS::fileExists($destination_key, getenv('BUCKET'))) {
+             EsetresAWS::deleteFile($destination_key, getenv('BUCKET'));
          }
          $uploadResult = EsetresAWS::uploadFile(getenv('LOCAL_FILE'), getenv('KEY'), getenv('BUCKET'));
 
@@ -30,7 +30,7 @@
 
          $object = EsetresAWS::getObject($destination_key, getenv('BUCKET'));
 
-         EsetresAWS::setPublicObject($destination_key, getenv('BUCKET'));
+         EsetresAWS::makeFilePublic($destination_key, getenv('BUCKET'));
 
          $this->assertTrue(is_string(file_get_contents($object['@metadata']['effectiveUri'])));
          echo $object['@metadata']['effectiveUri'];

@@ -8,7 +8,56 @@ Laravel AWS S3 Service Integration to upload files.
 
 ## Documentation
 
-Coming soon.
+### Installation
+
+Require this package with composer:
+
+```
+composer require dumpk/esetres
+```
+
+Add this variables to your .env with your Amazon credentials
+
+```
+AWS_ACCESS_KEY_ID={AMAZONACCESSKEY}
+AWS_SECRET_ACCESS_KEY={SECRETAMAZONSOMETHINGLONG}
+AWS_REGION={YOURREGION}
+```
+
+
+### Usage
+
+Add the EsetresAWS class to your class header
+```php
+use Dumpk\Esetres\EsetresAWS;
+```
+The class is a singleton so you only need to call the static methods.
+
+To upload a file:
+```php
+EsetresAWS::uploadFile($filepath, $key, $bucket);
+```
+
+To delete a file:
+```php
+EsetresAWS::deleteFile($key, $bucket);
+```
+
+To make a file accesible to everyone:
+```php
+EsetresAWS::makeFilePublic($key, $bucket);
+```
+
+To check for a file existance:
+```php
+EsetresAWS::fileExists($key, $bucket);
+```
+
+If you want to get all the file information:
+```php
+EsetresAWS::getObject($key, $bucket);
+```
+
 
 ## Support
 
