@@ -1,10 +1,7 @@
 # Esetres
 
 [![Author](https://img.shields.io/badge/author-%40nicolasbistolfi-blue.svg)](https://twitter.com/nicolasbistolfi)
-[![Build Status](https://scrutinizer-ci.com/g/Dumpk/dashboard/badges/build.png)](https://scrutinizer-ci.com/g/Dumpk/Esetres/build-status/)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Dumpk/Esetres/badges/quality-score.png)](https://scrutinizer-ci.com/g/Dumpk/Esetres/)
-[![Code Coverage](https://scrutinizer-ci.com/g/Dumpk/Esetres/badges/coverage.png)](https://scrutinizer-ci.com/g/Dumpk/Esetres/)
-[![Github Release](https://img.shields.io/github/release/Dumpk/Esetres.svg)](https://github.com/Dumpk/Esetres)
+[![Build Status](https://travis-ci.org/dumpk/esetres.svg?branch=master)](https://travis-ci.org/dumpk/esetres)
 [![Packagist](https://img.shields.io/packagist/l/Dumpk/Esetres.svg)](https://packagist.org/packages/Dumpk/Esetres)
 
 Laravel AWS S3 Service Integration to upload files.
