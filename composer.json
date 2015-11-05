@@ -1,0 +1,41 @@
+{
+  "name": "dumpk/esetres",
+  "description": "Laravel AWS S3 Service Integration",
+  "keywords": [
+    "laravel",
+    "laraflock",
+    "Esetres",
+    "S3",
+    "AWS S3"
+  ],
+  "homepage": "http://github.com/dumpk/esetres",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Nicolás Bistolfi",
+      "email": "nbistolfi@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "aws/aws-sdk-php": "~3.0"
+  },
+  "require-dev": {
+    "laravel/laravel": "~5.1",
+    "phpunit/phpunit": "~4.0",
+    "phpspec/phpspec": "~2.1"
+  },
+  "autoload": {
+    "classmap": [
+      "tests"
+    ],
+    "psr-4": {
+      "Dumpk\\Esetres\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Dumpk\\Esetres\\Test\\": "tests/"
+    }
+  }
+}

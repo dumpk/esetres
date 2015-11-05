@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="true"
+         syntaxCheck="false">
+    <testsuites>
+        <testsuite name="Esetres Test Suite">
+            <directory suffix=".php">./tests/</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist>
+            <directory suffix=".php">./src/</directory>
+        </whitelist>
+    </filter>
+    <php>
+        <env name="AWS_ACCESS_KEY_ID" value="[[YOUR ACCESS KEY]]" />
+        <env name="AWS_SECRET_ACCESS_KEY" value="[[YOUR SECRET KEY]]" />
+        <env name="AWS_REGION" value="us-west-2" />
+
+        <env name="LOCAL_FILE"  value="files/test.txt" />
+        <env name="KEY"         value="tests/test.txt" />
+        <env name="BUCKET"      value="[[YOUR BUCKET]]" />
+    </php>
+</phpunit>

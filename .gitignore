@@ -1,0 +1,9 @@
+composer.phar
+composer.lock
+coverage.xml
+.DS_Store
+Thumbs.db
+/vendor
+/.idea
+
+phpunit.local.xml
