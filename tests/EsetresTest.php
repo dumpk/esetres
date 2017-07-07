@@ -1,6 +1,5 @@
 <?php
 
-
  /**
   * @author    Nicolás Bistolfi <nbistolfi@gmail.com>
   * @license   MIT
@@ -9,8 +8,9 @@
   * @link      http://github.com/dumpk/esetres
   */
  use Dumpk\Esetres\EsetresAWS;
+ use PHPUnit\Framework\TestCase;
 
- class ElastcoderTest extends PHPUnit_Framework_TestCase
+ class ElastcoderTest extends TestCase
  {
      public function tearDown()
      {
