@@ -72,12 +72,16 @@ class EsetresAWS
         return $result;
     }
 
-    public static function getObject($key, $bucket)
+    public static function getObject($key, $bucket, $saveToPath = null)
     {
         $s3c = self::getS3C();
         $object = null;
         if ($s3c->doesObjectExist($bucket, $key)) {
-            $object = $s3c->getObject(array('Bucket' => $bucket, 'Key' => $key));
+			$data = array('Bucket' => $bucket, 'Key' => $key);
+			if ($saveToPath) {
+				$data['SaveAs'] = $saveToPath;
+			}
+            $object = $s3c->getObject($data);
         }
 
         return $object;
