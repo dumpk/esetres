@@ -57,7 +57,10 @@ If you want to get all the file information:
 ```php
 EsetresAWS::getObject($key, $bucket);
 ```
-
+Optionally you can pass to the getObject method, a filepath to store the file on your server.
+```php
+EsetresAWS::getObject($key, $bucket, "/var/www/filepath.txt");
+```
 
 ## Support
 
