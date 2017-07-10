@@ -72,12 +72,17 @@ class EsetresAWS
         return $result;
     }
 
-    public static function getObject($key, $bucket, $saveToPath = NULL)
+    public static function getObject($key, $bucket, $saveToPath = NULL, $aditional_options = [])
     {
         $s3c = self::getS3C();
         $object = null;
-        if ($s3c->doesObjectExist($bucket, $key)) {
-			$data = array('Bucket' => $bucket, 'Key' => $key);
+        $data = [];
+        if (is_array($aditional_options) && $aditional_options) {
+            $data = $aditional_options;
+        }
+        if (self::fileExists($key, $bucket, $aditional_options)) {
+			$data['Bucket'] = $bucket;
+            $data['Key']    = $key;
 			if ($saveToPath != NULL) {
 				$data['SaveAs'] = $saveToPath;
 			}
@@ -106,15 +111,15 @@ class EsetresAWS
         }
     }
 
-    public static function fileExists($key, $bucket)
+    public static function fileExists($key, $bucket, $aditional_options = [])
     {
-        return self::objectExists($key, $bucket);
+        return self::objectExists($key, $bucket, $aditional_options);
     }
 
-    public static function objectExists($key, $bucket)
+    public static function objectExists($key, $bucket, $aditional_options = [])
     {
         $s3c = self::getS3C();
-        if ($s3c->doesObjectExist($bucket, $key)) {
+        if ($s3c->doesObjectExist($bucket, $key, $aditional_options)) {
             return true;
         } else {
             return false;
